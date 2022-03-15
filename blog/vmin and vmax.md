@@ -40,6 +40,12 @@
    [盒模型][4]
 
 
+3. 横屏模式，还是以 XR 为例
+
+
+#### 兼容性
+[兼容性][5]
+
 
 
 
@@ -54,3 +60,4 @@
 [2]: ../assets/vmin-2.png
 [3]: ../assets/vmin-3.png
 [4]: ../assets/vmin-4.png
+[5]: ../assets/vmin-5.png
