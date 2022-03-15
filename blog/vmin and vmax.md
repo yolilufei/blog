@@ -31,7 +31,7 @@
 ```
 在 chrome 模拟h5环境下的效果：
 1. iphone XR  宽高：414*896    
-    [iphone XR][1]  
+    ![iphone XR][https://github.com/yolilufei/better-css/blob/main/assets/vmin-1.png]  
     [盒模型][2]
 
 2. Nest Hub  宽高：1024*600 
