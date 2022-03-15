@@ -34,8 +34,10 @@
     [iphone XR][1]  
     [盒模型][2]
 
-2. Nest Hub  宽高：1024*600
-   [Nest Hub][3]
+2. Nest Hub  宽高：1024*600 
+   
+   [Nest Hub][3]    
+   [盒模型][4]
 
 
 
@@ -51,3 +53,4 @@
 [1]: ../assets/vmin-1.png
 [2]: ../assets/vmin-2.png
 [3]: ../assets/vmin-3.png
+[4]: ../assets/vmin-4.png
