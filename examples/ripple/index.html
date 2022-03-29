@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            width: 20vmin;
+            height: 20vmin;
+            background: lightgray;
+            margin: 200px auto;
+            transition: all .2s linear;
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .7);
+            animation: ripple-a .5s linear;
+            transform: scale(0);
+        }
+
+        @keyframes ripple-a {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+    <script>
+        let p = null;
+        window.onload = () => {
+            p = document.querySelector('div');
+            p.addEventListener('click', createRipple);
+        }
+
+        function createRipple(e) {
+            [].slice.call(p.children).forEach(ele => {
+                if (ele.classList.contains('ripple')) {
+                    p.removeChild(ele);
+                }
+            });
+            const span = document.createElement('span');
+            const { x, y, width, height } = p.getBoundingClientRect();
+            const spanShape = Math.max(width, height);
+            const center = spanShape / 2;
+            span.style.width = span.style.height = spanShape + 'px';
+            const left = `${e.clientX - x - center}px`;
+            const top = `${e.clientY - y - center}px`;
+            span.style.left = left;
+            span.style.top = top;
+            span.classList.add('ripple');
+            p.appendChild(span);
+        }
+    </script>
+</body>
+</html>
