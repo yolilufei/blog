@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        border: 3px solid grey;
+        border-radius: 3px;
+        transition: all 1s linear;
+        outline: none;
+        position: relative;
+      }
+
+      input:-webkit-autofill {
+        border: 3px solid red;
+      }
+      input:autofill {
+        border: 3px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- 表单内输入元素 -->
+    <form method="post" action="/save">
+      <label for="email">Email</label> <input type="email" name="email" id="email" autocomplete="email">
+    </form>
+    <!-- 表单外输入元素 -->
+    <input type="email" name="email" id="id" autocomplete="off">
+  </body>
+</html>

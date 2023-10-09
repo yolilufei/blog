@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-select</title>
+    <style>
+        p {
+            margin: 1.5rem;
+        }
+
+        .select-none {
+            user-select: none;
+        }
+
+        .select-all {
+            user-select: text;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="first select-default">第一段内容，the first paragraph</p>
+    <p class="second select-none">第二段内容，the second paragraph</p>
+    <p class="second select-all">第三段内容，the third paragraph</p>
+</body>
+</html>
