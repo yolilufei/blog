@@ -24,15 +24,51 @@
 
 ### 接下来用几个例子深入了解每个属性值的表现行为
 
-#### 所有文本无法选择
+有如下 html fragment,
 
-有如下 html fragment
-
-<code>    <div style="user-select: none;">直接子元素文本
+<code>
+    <div>直接子元素文本
         <section>子元素section中的文本
             <span>二级子元素span中的文本</span>
         </section>
-    </div></code>
+    </div>
+</code>
+
+节点树如下
+
+```html
+
+div
+    文本: 直接子元素文本
+    section
+            文本: 子元素section中的文本
+            span
+                文本: 二级子元素span中的文本
+
+```
+
+#### 当给div元素设置 `user-select: none` 时，div 内及其所有子孙元素的内容均无法选中，效果如下。
+
+<code>
+    <div style="user-select: none">直接子元素文本
+        <section>子元素section中的文本
+            <span>二级子元素span中的文本</span>
+        </section>
+    </div>
+</code>
+
+
+#### 当给section元素设置 `user-select: none` 时，section 内及其所有子孙元素的内容均无法选中，但其父元素是可以被选中的，效果如下。
+
+<code>
+    <div>直接子元素文本
+        <section style="user-select: none">子元素section中的文本
+            <span>二级子元素span中的文本</span>
+        </section>
+    </div>
+</code>
+
+#### 所有文本无法选择
 
 ### 兼容性
 
