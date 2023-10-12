@@ -14,4 +14,4 @@ description: '@supports 又被称为「feature query」, 当你想使用新的cs
 
 比如想要使用 flex，但不确定浏览器是否支持，可以这样实现
 
-{% embed url="https://codepen.io/navigatoropera/pen/eYPdxLR" %}
+<!-- {% embed url="https://codepen.io/navigatoropera/pen/eYPdxLR" %} -->
