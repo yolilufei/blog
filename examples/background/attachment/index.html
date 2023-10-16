@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div:first-child {
+        height: 20vh;
+        width: 20vh;
+        background: url(./pic.jpg) no-repeat;
+        background-size: contain;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <a href="alipays://platformapi/startapp?appId=2021002128690179"> andorid alipays </a>
+      <p></p>
+      <a href="alipay://platformapi/startapp?appId=2021002128690179"> iphone alipays </a>
+    </h2>
+    <div></div>
+    <div class="container"></div>
+    <script>
+      const container = document.querySelector(".container");
+      container.innerText = '123';
+      const success = (po) => {
+        container.innerText = JSON.stringify(po);
+      };
+
+      (() => {
+        if (!navigator.geolocation) {
+          console.error("Geolocation is not supported by your browser");
+          container.innerText = "Geolocation is not supported by your browser";
+        } else {
+          navigator.geolocation.getCurrentPosition(success);
+        }
+      })();
+      openTMap = () => {
+        const TMAP_KEY = "test";
+        const { latEnd, lonEnd, destination } = this.props;
+        const { usrLat, usrLon } = this.getGPSInfo();
+        let mobileUrl = "";
+        let h5Url = "";
+        // 获取到用户定位信息，走导航模式；未获取到用户定位信息，走单点标注模式
+        if (usrLat && usrLon) {
+          mobileUrl = `qqmap://map/routeplan?type=drive&from=我的位置&fromcoord=${usrLat},${usrLon}&to=${destination}&tocoord=${latEnd},${lonEnd}&referer=${TMAP_KEY}`;
+          h5Url = `https://apis.map.qq.com/uri/v1/routeplan?type=drive&from=我的位置&fromcoord=${usrLat},${usrLon}&to=${destination}&tocoord=${latEnd},${lonEnd}&policy=1&referer=${TMAP_KEY}`;
+        } else {
+          mobileUrl = `qqmap://map/marker?marker=coord:${latEnd},${lonEnd};title:${destination};addr:${destination}&referer=${TMAP_KEY}`;
+          h5Url = `https://apis.map.qq.com/uri/v1/marker?marker=coord:${latEnd},${lonEnd};title:${destination};addr:${destination}&referer=${TMAP_KEY}`;
+        }
+        window.location.href = mobileUrl;
+        window.setTimeout(() => {
+          window.location.href = h5Url;
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>

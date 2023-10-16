@@ -1,0 +1,22 @@
+{
+  "name": "dive-into-css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "setup": "vitepress init",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "less": "^4.2.0",
+    "vitepress": "^1.0.0-rc.22"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "engineStrict": true,
+  "packageManager": "yarn@1.22.19",
+  "type": "module"
+}
