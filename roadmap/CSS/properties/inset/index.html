@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+        .inset-demo {
+            position: absolute;
+            inset: 20px;
+            background-color: antiquewhite;
+            transition: all .2s linear;
+            &:hover {
+                inset: -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="inset-demo"></div>
+</body>
+</html>

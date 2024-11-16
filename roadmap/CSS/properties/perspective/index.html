@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* 
+        1. 创造3D空间
+        2. 设置元素的z-index
+        3. 设置元素的transform: translateZ(10px)
+        */
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 200px auto;
+            transform-style: preserve-3d;
+            perspective: 800px;
+            /* perspective-origin: 150% 150%; */
+        }
+
+        .box:hover {
+            transform: rotateY(12turn);
+            transition: all 300s linear;
+        }
+
+        section[class*='-block'] {
+            height: 100%;
+            width: 100%;
+            font-size: 24px;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+            position: absolute;
+            backface-visibility: inherit;
+        }
+
+        .front-block {
+            background-color: rgba(90,90,90,.7);
+            transform: translateZ(50px);
+        }
+        .back-block {
+            background: rgba(0, 210, 0, .7);
+            transform: rotateY(180deg) translateZ(50px);
+        }
+        .left-block {
+            background: rgba(0, 0, 210, .7);
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .right-block {
+            background: rgba(210, 0, 0, .7);
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .top-block {
+            background: rgba(210, 210, 0, .7);
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .bottom-block {
+            background: rgba(210, 0, 210, .7);
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <section class="front-block" >1</section>
+        <section class="back-block">2</section>
+        <section class="left-block">3</section>
+        <section class="right-block">4</section>
+        <section class="top-block">5</section>
+        <section class="bottom-block">6</section>
+    </div>
+</body>
+</html>
