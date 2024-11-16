@@ -1,5 +1,0 @@
-scroll event
-scrollWidth
-scrollHeight
-scrollTop
-scrollLeft

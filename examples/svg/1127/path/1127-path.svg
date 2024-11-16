@@ -1,0 +1,6 @@
+<svg width="200" height="250" version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 20, L 120 20, L 120 220, L 20 220, L 20 20" stroke="red" fill="transparent" />
+    <path d="M 10 10 H 90 V 90 H 10 L 10 10" stroke="black" fill="transparent" />
+    <path d="M 30 30 h 80 v 80 h -80 z" />
+</svg>

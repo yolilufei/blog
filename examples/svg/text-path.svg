@@ -1,0 +1,14 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+    <defs>
+        <clipPath id="ball">
+            <circle cx="100" cy="100" r="10" />
+        </clipPath>
+    </defs>
+    <text x="100" y="100" fill="red"
+    >
+        <textPath href="#ball">
+            123456789
+        </textPath>
+    </text>
+</svg>
