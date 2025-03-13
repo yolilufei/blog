@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outline-box {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to bottom, red, black);
+            outline: 1px solid red;
+            outline-offset: 10px;
+            /* animation: outline-animation 1s infinite; */
+            transition: outline-offset 1s ease-in-out;
+            cursor: url(https://cdnfile.corp.kuaishou.com/kc/files/a/fengmap-visiualization/duck.png), pointer;
+        }
+        .outline-box:hover {
+            outline-offset: 20px;
+        }
+
+        @keyframes outline-animation {
+            0% {
+                outline-offset: 10px;
+            }
+            100% {
+                outline-offset: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outline-box"></div>
+</body>
+</html>

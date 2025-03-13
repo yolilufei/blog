@@ -4,9 +4,9 @@ import listFiles from "../../listFile";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "better-css",
-  description: "一起了解css的世界",
-  base: "/better-css",
+  title: "FE-ROADMAP",
+  description: "前端知识体系",
+  base: "/fe-roadmap",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     // nav: [
@@ -15,19 +15,19 @@ export default defineConfig({
     // ],
     logo: "../assets/css.jpeg",
     sidebar: [
-      listFiles(path.join( path.resolve('docs'), "./base"), { text: 'CSS 基础', items: []}),
-      listFiles(path.join( path.resolve('docs'), "./preprocessor"), { text: 'CSS 预处理器', items: []}),
-      listFiles(path.join( path.resolve('docs'), "./implementation"), { text: 'CSS 领域应用', items: []}),
+      listFiles(path.join( path.resolve('docs'), "./css/base"), { text: 'CSS 基础', items: []}),
+      listFiles(path.join( path.resolve('docs'), "./css/preprocessors"), { text: 'CSS 预处理器', items: []}),
+      listFiles(path.join( path.resolve('docs'), "./css/implementation"), { text: 'CSS 领域应用', items: []}),
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/yolilufei/better-css" },
+      { icon: "github", link: "https://github.com/yolilufei/blog" },
     ],
     search: {
       provider: 'local'
     },
     editLink: {
-      pattern: 'https://github.com/yolilufei/better-css.git',
+      pattern: 'https://github.com/yolilufei/blog.git',
       text: 'Edit this page on Github'
     }
   },

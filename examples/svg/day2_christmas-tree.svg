@@ -1,7 +1,0 @@
-<svg version="1.1"
-    xmlns="http://www.w3.org/2000/svg" width="300" height="300">
-    <rect x="145" y="250" width="10" height="40" fill="pink" stroke="transparent" />
-    <polygon points="120 250, 150 220, 180 250" fill="green"/>
-    <polygon points="130 230, 150 200, 170 230" fill="lightgreen"/>
-    <path d="M 140 210 L 150 190 L 160 210" fill="red"/>
-</svg>
