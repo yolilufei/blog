@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "setup": "vitepress init",
@@ -21,5 +22,12 @@
   },
   "engineStrict": true,
   "packageManager": "yarn@1.22.19",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "ws": "^8.18.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
