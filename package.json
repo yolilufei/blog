@@ -10,10 +10,11 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "tailwind:init": "tailwindcss init",
-    "build:tailwind": "tailwindcss -i ./examples/tailwindcss/base-style.css -o ./examples/tailwindcss/base.css --watch"
+    "build:tailwind": "tailwindcss -i ./examples/tailwindcss/base-style.css -o ./examples/tailwindcss/base.css --watch",
+    "build:less": "lessc packages/CSSLibrary/less/*.less packages/CSSLibrary/css/*"
   },
   "devDependencies": {
-    "less": "^4.2.0",
+    "less": "^4.3.0",
     "tailwindcss": "^3.3.5",
     "vitepress": "^1.0.0-rc.22"
   },

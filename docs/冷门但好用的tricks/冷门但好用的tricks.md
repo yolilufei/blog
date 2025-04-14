@@ -1,0 +1,1 @@
+1. 判断是否有恶意插入的iframe小技巧：window.length 返回窗口中框架的数量，包括 frame 和 iframe

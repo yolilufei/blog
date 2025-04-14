@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        window.Storage.prototype.getItemExpireTime = function (key) {
+            console.log(key, time);
+            // return this[key] | undefined;
+        }
+        window.Storage.prototype.setItemExpireTime = function (key, time) {
+            // return void;
+        }
+
+        window.Storage.prototype.validateKeyExpire = function (key) {
+            // return true or false;
+        }
+
+        // 禁止 . 操作符
+        const proxyStorage = new Proxy(window.localStorage, {
+            get: function(target, key) {
+                console.log('proxy', key);
+                return target[key];
+            }
+        })
+
+        proxyStorage.setItem('aa', 'cc');
+        proxyStorage.getItem('aa');
+    </script> -->
+    <script>
+        const client = new WebSocket('ws://localhost:3555');
+        client.addEventListener('open', e => {
+            client.send('hi, client here');
+        });
+        client.addEventListener('message', e => {
+            console.log('form server', e.data);
+        })
+
+        setTimeout(() => {
+            client.send('terminate')
+        }, 2000);
+    </script>
+</body>
+</html>

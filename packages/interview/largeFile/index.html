@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript" src="https://s2-12526.kwimgs.com/kos/nlav12526/xzznkf/redirect.410c370d85effaaf.js"></script>
+    
+  </head>
+  <body>
+    <input type="file" name="file">
+    <button>upload</button>
+    <script type="module">
+      import { createFileChunk } from  './index.js';
+      window.onload = () => {
+        window.indexedDB.open('test');
+        document.querySelector('button').addEventListener('click', uploadFile);
+      }
+      const uploadFile = async () => {
+        const fileContainer = document.querySelector("input");
+        console.log(fileContainer.files[0]);
+        createFileChunk(fileContainer.files[0]);
+        const formData = new FormData();
+        formData.append("file", fileContainer.files[0]);
+        await fetch("http://localhost:8888/upload", {
+          method: "POST",
+          body: formData
+        });
+      };
+    </script>
+  </body>
+</html>
