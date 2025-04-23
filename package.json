@@ -29,6 +29,6 @@
     "ws": "^8.18.1"
   },
   "workspaces": [
-    "packages/*"
+    "roadmap/*"
   ]
 }
