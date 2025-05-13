@@ -1,0 +1,14 @@
+{
+  "name": "dive-into-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "tsc:init": "tsc --init",
+    "tsc:build": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^5.8.3"
+  }
+}

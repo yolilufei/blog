@@ -1,0 +1,6 @@
+class App {
+
+    public use() {
+        
+    }
+}

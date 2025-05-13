@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+        const a = async (ctx, next) => {
+            ctx.a = 'a';
+            console.log('a start');
+            next();
+            console.log('a end');
+        }
+
+        const b = async (ctx, next) => {
+            ctx.b = 'b';
+            console.log('b start');
+            next();
+            console.log('b end');
+        }
+
+        const c = async (ctx) => {
+            console.log(ctx);
+        }
+
+        const context = Object.create(null);
+        /** 
+         * @desc 组合传入的函数，然后顺序执行函数
+         * 先执行 a(), 再执行 b()
+         * 
+        */
+        const compose = (middlewares) => async (ctx) => {
+            let i = 0
+            const dispatch = async () => {
+                const fn = middlewares[i];
+                if (typeof fn !== 'function') {
+                    throw new Error('middleware must be type of function');
+                }
+                let onceCalled = false;
+                const nextProxy = async () => {
+                    if (onceCalled) {
+                        throw new Error('next() 方法调用了多次');
+                    }
+                    onceCalled = true;
+                    await fn(ctx, dispatch(i+1))
+                }
+
+                try {
+                    if (i === middlewares.length - 1) {
+                    await fn(ctx);
+                } else {
+                    await fn(ctx, nextProxy);
+                } 
+                } catch(e) {
+                    console.error(e);
+                } finally {
+                    // 
+                }
+            }
+
+            dispatch(0);
+        }
+
+        compose([a, b, c])(context);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

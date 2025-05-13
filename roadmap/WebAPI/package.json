@@ -1,0 +1,13 @@
+{
+  "name": "webapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^4.0.3"
+  },
+  "scripts": {
+    "sse:server": "node sse/watchServer.js"
+  },
+  "type": "module"
+}
