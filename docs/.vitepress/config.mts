@@ -6,7 +6,8 @@ import listFiles from "../../listFile";
 export default defineConfig({
   title: "FE-ROADMAP",
   description: "前端知识体系",
-  base: "/fe-roadmap",
+  base: "/blog/",
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     // nav: [

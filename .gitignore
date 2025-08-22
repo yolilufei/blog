@@ -1,6 +1,6 @@
 node_modules
 yarn-error.log
 .vitepress/cache/*
-
+.vitepress/dist
 dist
 **/dist
