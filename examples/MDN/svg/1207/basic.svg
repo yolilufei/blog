@@ -1,5 +1,0 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-    <circle cx="100" cy="90" r="40" fill="#D1495B" stroke="none"/>
-    <circle cx="100" cy="30" r="10" fill="transparent" stroke="orange" />
-    <rect x="85" y="38" width="30" height="15" fill="pink" stroke="red" />
-</svg>
