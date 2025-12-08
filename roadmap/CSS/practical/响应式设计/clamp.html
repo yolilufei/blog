@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width='device-width', initial-scale=1.0" />
+    <title>Clamp</title>
+    <style>
+      .test-clamp-header {
+        background-color: #333;
+        color: white;
+        height: clamp(10vh, 100px, 200px);
+      }
+
+      .test-clamp-side {
+        float: left;
+        width: clamp(10px, 2vw + 1em, 50px);
+        height: 100vh;
+        background-color: aquamarine;
+      }
+
+      .test-clamp-content {
+        margin-left: clamp(10px, 2vw + 1em, 50px);
+        height: 100vh;
+        background-color: rgb(147, 147, 147);
+        font-size: clamp(10px, 2vw + 1em, 50px);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="test-clamp-header">
+      this is header. desc the clamp usage
+    </header>
+    <section class="test-clamp-side">
+      this is the side bar which is used to display the clamp property
+    </section>
+    <main class="test-clamp-content">
+      this is the main content. this is the main content.this is the main
+      content. this is the main content.this is the main content.this is the
+      main content. this is the main content.this is the main content.this is
+      the main content. this is the main content.this is the main content.this
+      is the main content. this is the main content.this is the main
+      content.this is the main content. this is the main content.this is the
+      main content.this is the main content. this is the main content.this is
+      the main content.this is the main content. this is the main content. this
+      is the main content. this is the main content. this is the main content.
+      this is the main content. this is the main content. this is the main
+      content. this is the main content. this is the main content. this is the
+      main content. this is the main content. this is the main content. this is
+      the main content. this is the main content. this is the main content. this
+      is the main content. this is the main content. this is the main content.
+      this is the main content. this is the main content. this is the main
+      content. this is the main content. this is the main content. this is the
+      main content. this is the main content. this is the main content. this is
+      the main content. this is the main content. this is the main content. this
+      is the main content. this is the main content. this is the main content.
+      this is the main content. this is the main content.
+    </main>
+  </body>
+</html>

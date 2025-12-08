@@ -1,19 +1,24 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanPlugin } = require("webpack");
 // Webpack configuration for CSS Modules，提取css代码为单独文件
+
 const config = {
   mode: "development",
-  entry: path.resolve(
-    process.cwd(),
-    "./practical/css_isolation/css_module/button.module.css"
-  ),
+  entry: {
+    index: path.resolve(
+      process.cwd(),
+      "./practical/css_isolation/css_module/src/index.js"
+    ),
+  },
   output: {
     path: path.resolve(
       process.cwd(),
       "./practical/css_isolation/css_module/dist"
     ),
-    filename: "[name]_[contenthash:5].js",
+    // publicPath: "/assets",
+    filename: "[name].[contenthash:5].js",
   },
   module: {
     rules: [
@@ -26,7 +31,8 @@ const config = {
             loader: "css-loader",
             options: {
               modules: {
-                localIdentName: "[name]_[local]_[hash:base64:5]",
+                localIdentName: "[name]_[local]_[hash:base64]",
+                exportLocalsConvention: "camel-case",
               },
             },
           },
@@ -34,7 +40,18 @@ const config = {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin(), new CleanPlugin()],
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: path.resolve(
+        process.cwd(),
+        "./practical/css_isolation/css_module/public/index.html"
+      ),
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash:5].css",
+    }),
+    new CleanPlugin(),
+  ],
 };
 
 module.exports = config;
